@@ -16,6 +16,8 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
     var input_uft8 = ""
     var url : String?
     
+    var selectedRouteId = ""
+    
     var parser = XMLParser()
     
     var posts = NSMutableArray()
@@ -23,6 +25,7 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
     var elements = NSMutableDictionary()
     var element = NSString()
     var busRouteNm = NSMutableString()
+    var busRouteId = NSMutableString()
     
     override func viewDidLoad() {
         input_uft8 = input.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -30,7 +33,6 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
         
         super.viewDidLoad()
         beginParsing()
-
     }
     
     func beginParsing(){
@@ -39,6 +41,19 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
         parser.delegate = self
         parser.parse()
         DetailTable.reloadData()
+    }
+    
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "SearchBusStation"{
+            if let cell = sender as? UITableViewCell{
+                let indexPath = tableView.indexPath(for: cell)
+                selectedRouteId = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey:"busRouteId") as! NSString as String
+                
+                if let detailtableview = segue.destination as? BusStationSearchTVC{
+                    detailtableview.input = selectedRouteId
+                }
+            }
+        }
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName:String?, attributes attributeDict: [String:String])
@@ -50,6 +65,8 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
             elements = [:]
             busRouteNm = NSMutableString()
             busRouteNm = ""
+            busRouteId = NSMutableString()
+            busRouteId = ""
         }
     }
     
@@ -58,6 +75,9 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
         if element.isEqual(to: "busRouteNm"){
             busRouteNm.append(string)
         }
+        if element.isEqual(to: "busRouteId"){
+            busRouteId.append(string)
+        }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
@@ -65,6 +85,9 @@ class DetailDataTableViewController: UITableViewController, XMLParserDelegate {
         if (elementName as NSString).isEqual(to: "itemList"){
             if !busRouteNm.isEqual(nil){
                 elements.setObject(busRouteNm, forKey: "busRouteNm" as NSCopying)
+            }
+            if !busRouteId.isEqual(nil){
+                elements.setObject(busRouteId, forKey: "busRouteId" as NSCopying)
             }
             posts.add(elements)
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A14BB71320B0285000C58B43 /* BusStationSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */; };
+		A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71420B036D800C58B43 /* StationDetailVC.swift */; };
 		A1BEF1992096B75E000BCD3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF1982096B75E000BCD3E /* AppDelegate.swift */; };
 		A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF19A2096B75E000BCD3E /* ViewController.swift */; };
 		A1BEF19E2096B75E000BCD3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BEF19C2096B75E000BCD3E /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStationSearchTVC.swift; sourceTree = "<group>"; };
+		A14BB71420B036D800C58B43 /* StationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailVC.swift; sourceTree = "<group>"; };
 		A1BEF1952096B75E000BCD3E /* SubwayProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BEF1982096B75E000BCD3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1BEF19A2096B75E000BCD3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 		A1BEF1972096B75E000BCD3E /* SubwayProject */ = {
 			isa = PBXGroup;
 			children = (
+				A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */,
 				A1BEF1982096B75E000BCD3E /* AppDelegate.swift */,
 				A1BEF19A2096B75E000BCD3E /* ViewController.swift */,
 				A1BEF19C2096B75E000BCD3E /* Main.storyboard */,
@@ -66,6 +71,7 @@
 				A1BEF1A42096B75F000BCD3E /* Info.plist */,
 				A1DF6E4D2098581900CD296B /* DetailDataTableViewController.swift */,
 				A1C651EF20A19D4600629677 /* SubwayDetailDataTBC.swift */,
+				A14BB71420B036D800C58B43 /* StationDetailVC.swift */,
 			);
 			path = SubwayProject;
 			sourceTree = "<group>";
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */,
 				A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */,
 				A1C651F020A19D4600629677 /* SubwayDetailDataTBC.swift in Sources */,
 				A1BEF1992096B75E000BCD3E /* AppDelegate.swift in Sources */,
+				A14BB71320B0285000C58B43 /* BusStationSearchTVC.swift in Sources */,
 				A1DF6E4E2098581900CD296B /* DetailDataTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,6 @@
 import UIKit
 
 class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
-
     @IBOutlet var DetailTable: UITableView!
     
     var input = ""
@@ -26,12 +25,14 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
     
     override func viewDidLoad() {
         input_uft8 = input.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        url = "http://ws.bus.go.kr/api/rest/busRouteInfo/getBusRouteList?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&strSrch=" + input_uft8
+        url = "http://openapi.tago.go.kr/openapi/service/SubwayInfoService/getKwrdFndSubwaySttnList?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&subwayStationName=" + input_uft8
         
         super.viewDidLoad()
         beginParsing()
         
     }
+    
+    
     
     func beginParsing(){
         posts = []
@@ -44,7 +45,7 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName:String?, attributes attributeDict: [String:String])
     {
         element = elementName as NSString
-        if(elementName as NSString).isEqual(to: "itemList")
+        if(elementName as NSString).isEqual(to: "item")
         {
             elements = NSMutableDictionary()
             elements = [:]
@@ -55,16 +56,16 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
     
     func parser(_ parser: XMLParser, foundCharacters string:String)
     {
-        if element.isEqual(to: "busRouteNm"){
+        if element.isEqual(to: "subwayStationName"){
             busRouteNm.append(string)
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
-        if (elementName as NSString).isEqual(to: "itemList"){
+        if (elementName as NSString).isEqual(to: "item"){
             if !busRouteNm.isEqual(nil){
-                elements.setObject(busRouteNm, forKey: "busRouteNm" as NSCopying)
+                elements.setObject(busRouteNm, forKey: "subwayStationName" as NSCopying)
             }
             posts.add(elements)
         }
@@ -90,7 +91,7 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "busRouteNm") as! NSString as String
+        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "subwayStationName") as! NSString as String
         
         return cell
     }

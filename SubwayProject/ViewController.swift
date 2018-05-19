@@ -32,8 +32,8 @@ class ViewController: UIViewController {
             }
         }
         if segue.identifier == "SearchSubway"{
-            if let detailtableview = segue.destination as? DetailDataTableViewController{
-                detailtableview.input = inputBusname!
+            if let detailtableview = segue.destination as? SubwayDetailDataTBC{
+                detailtableview.input = inputSubwayname!
             }
         }
     }
@@ -47,7 +47,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
