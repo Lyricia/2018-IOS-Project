@@ -6,11 +6,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,66 +19,122 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-gS-uaH" userLabel="BusName">
-                                <rect key="frame" x="101" y="96" width="97" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-lJ-c3V">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lt3-cm-P3f" userLabel="Search">
-                                <rect key="frame" x="228" y="96" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="ActionSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVj-Uo-zeB"/>
-                                    <segue destination="Ba2-DQ-7xd" kind="show" identifier="SearchBus" id="NDm-GV-9OX"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUy-Ym-6I3" userLabel="SubwayName">
-                                <rect key="frame" x="101" y="148" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2e-ig-gBW">
-                                <rect key="frame" x="28" y="101" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-Sh-L67">
-                                <rect key="frame" x="28" y="153" width="60" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyX-c8-h1e">
-                                <rect key="frame" x="228" y="148" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search Subway"/>
-                                <connections>
-                                    <action selector="SearchSubway:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z7I-Oi-sb4"/>
-                                    <segue destination="K6q-TJ-2Oa" kind="show" identifier="SearchSubway" id="5v8-wp-wgQ"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7Z-G1-m34">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-gS-uaH" userLabel="BusName">
+                                                <rect key="frame" x="73" y="491" width="184" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lt3-cm-P3f" userLabel="Search">
+                                                <rect key="frame" x="281" y="475" width="77" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Search">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ActionSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVj-Uo-zeB"/>
+                                                    <segue destination="Ba2-DQ-7xd" kind="show" identifier="SearchBus" id="NDm-GV-9OX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.55239792840000002" green="1" blue="0.81580249890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rg-OS-ge4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUy-Ym-6I3" userLabel="SubwayName">
+                                                <rect key="frame" x="66" y="439" width="187" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyX-c8-h1e">
+                                                <rect key="frame" x="276" y="417" width="77" height="74"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Search">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SearchSubway:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z7I-Oi-sb4"/>
+                                                    <segue destination="K6q-TJ-2Oa" kind="show" identifier="SearchSubway" id="5v8-wp-wgQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udw-sx-AZo">
+                                                <rect key="frame" x="132" y="522" width="150" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Subway Line">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="IR8-wm-7fk" kind="show" id="zDo-Bo-4US"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.55239792840000002" green="1" blue="0.81580249890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vVq-nI-fOj" appends="YES" id="WfX-qi-E2K"/>
+                            <outletCollection property="gestureRecognizers" destination="bbj-6Q-upF" appends="YES" id="hHS-rA-dm6"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="dh1-Qu-6k3"/>
+                    <navigationItem key="navigationItem" title="Search" id="dh1-Qu-6k3"/>
                     <connections>
+                        <outlet property="BehindView" destination="o7Z-G1-m34" id="vOv-fs-u0y"/>
                         <outlet property="BusName" destination="cHI-gS-uaH" id="ZEr-jd-EYi"/>
                         <outlet property="ButtonSearch" destination="lt3-cm-P3f" id="L5o-GR-7RA"/>
+                        <outlet property="FrontView" destination="6rg-OS-ge4" id="JwR-JG-ldq"/>
                         <outlet property="SubwayName" destination="fUy-Ym-6I3" id="38L-bT-SVq"/>
+                        <outlet property="searchDisplayController" destination="OAo-1d-p4d" id="lI0-mo-BqB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="j0z-8c-Nbz">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="YIh-eT-K7f"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="k0c-sZ-m1W"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="2cg-82-FfP"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="anz-vn-nrJ"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="OAo-1d-p4d">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="dKW-Id-dQ7"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="EBM-Ip-tJi"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="lQk-gc-D53"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="sCa-A0-JwC"/>
+                    </connections>
+                </searchDisplayController>
+                <swipeGestureRecognizer direction="right" id="vVq-nI-fOj" userLabel="RightGesture">
+                    <connections>
+                        <action selector="SwipeView2:" destination="BYZ-38-t0r" id="Dej-lM-xCM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="bbj-6Q-upF" userLabel="LeftGesture">
+                    <connections>
+                        <action selector="SwipeView:" destination="BYZ-38-t0r" id="4lV-8s-DRc"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="332" y="-774"/>
+            <point key="canvasLocation" x="-388.40579710144931" y="-774.45652173913049"/>
         </scene>
         <!--Subway Detail DataTBC-->
         <scene sceneID="wPR-DV-qVq">
@@ -88,13 +145,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Ca0-V4-8Uo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6LL-Um-qAL" detailTextLabel="Z6H-eH-s69" style="IBUITableViewCellStyleSubtitle" id="Ca0-V4-8Uo">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ca0-V4-8Uo" id="1NO-dX-g1v">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6LL-Um-qAL">
+                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z6H-eH-s69">
+                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Uzk-ag-5aG" kind="show" identifier="SearchSubStationDetail" id="kO6-bg-qD4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,7 +184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idc-iz-C2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-428"/>
+            <point key="canvasLocation" x="612" y="-377"/>
         </scene>
         <!--Search-->
         <scene sceneID="ZN5-OH-fvO">
@@ -136,31 +212,52 @@
                             <outlet property="delegate" destination="Ba2-DQ-7xd" id="jDn-Ld-sZd"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Result" id="Jab-lm-ogu"/>
                     <connections>
                         <outlet property="DetailTable" destination="iKI-e6-cbg" id="Gcc-zM-rju"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttq-Wy-bhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-1088"/>
+            <point key="canvasLocation" x="613" y="-1104"/>
         </scene>
         <!--Station-->
         <scene sceneID="uvk-8J-yBs">
             <objects>
-                <tableViewController title="Station" id="Vxw-LX-7RN" customClass="BusStationSearchTVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StationVC" title="Station" id="Vxw-LX-7RN" customClass="BusStationSearchTVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gb7-wR-JH2" userLabel="DetailTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GUD-GG-TYM" userLabel="Cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GUD-GG-TYM" userLabel="Cell" customClass="stationCell" customModule="SubwayProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUD-GG-TYM" id="qEv-v0-TuN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzg-n3-SBY">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-nL-eGZ">
+                                            <rect key="frame" x="39" y="11" width="164" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-Yd-mrV">
+                                            <rect key="frame" x="0.0" y="6" width="31" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imageview" destination="Rzg-n3-SBY" id="rA4-af-L9D"/>
+                                    <outlet property="name" destination="Y78-nL-eGZ" id="HD1-tq-5jF"/>
+                                    <outlet property="rotimage" destination="mKP-Yd-mrV" id="9B4-WE-BSh"/>
                                     <segue destination="4rT-Nm-kql" kind="show" identifier="SearchBusStationDetail" id="KrU-VG-6C3"/>
                                 </connections>
                             </tableViewCell>
@@ -170,18 +267,33 @@
                             <outlet property="delegate" destination="Vxw-LX-7RN" id="t50-Fw-a63"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="whe-we-xj0">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="bookmarks" id="Jox-Ca-R7t">
+                                <connections>
+                                    <action selector="AddBookmark:" destination="Vxw-LX-7RN" id="Zq2-EF-6PQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="Egm-L1-0I1">
+                                <connections>
+                                    <segue destination="bLR-fN-MQl" kind="show" identifier="BusRouteSearch" id="1mc-Lv-dAi"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="DetailTable" destination="gb7-wR-JH2" id="Eth-JJ-Tun"/>
+                        <outlet property="titleitem" destination="whe-we-xj0" id="my0-It-4Yt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Jy-we-TzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="-1088"/>
+            <point key="canvasLocation" x="1393" y="-1105"/>
         </scene>
         <!--Information-->
         <scene sceneID="xLG-25-t2D">
             <objects>
-                <viewController title="Information" id="4rT-Nm-kql" customClass="StationDetailVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoVC" title="Information" id="4rT-Nm-kql" customClass="StationDetailVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zpn-Of-2xj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,56 +323,270 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ht7-pj-G2f"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="14s-pn-KIl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="g7c-K7-99W">
+                            <connections>
+                                <action selector="AddBookmark:" destination="4rT-Nm-kql" id="wUN-5O-hDH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="AhE-il-95V" id="i18-yJ-bEJ"/>
                         <outlet property="TextView" destination="oa1-nj-Up7" id="8ih-ot-Ke5"/>
+                        <outlet property="titleitem" destination="14s-pn-KIl" id="hx8-Vu-FfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0q-sm-CoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582.608695652174" y="-1088.3152173913045"/>
+            <point key="canvasLocation" x="2993" y="-1105"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="BEQ-o9-r4J">
+        <!--BusRouteMap-->
+        <scene sceneID="4e9-Y9-wC8">
             <objects>
-                <viewController id="c97-Wj-9Z6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HKr-Zg-t3f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="irP-NB-uCN"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3dV-vx-wh5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="913-vk-0QH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-386" y="-51"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="cWV-ZY-kP4">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P2a-O3-OSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yPl-x0-ySp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H2Z-dg-eoc">
+                <viewController id="bLR-fN-MQl" userLabel="BusRouteMap" customClass="RouteMapVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ny-gF-q6A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e51-A4-361">
-                                <rect key="frame" x="204" y="172" width="46" height="30"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7kU-Zy-W5I">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kXp-0L-1U9"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NGF-Fp-biP"/>
+                        <viewLayoutGuide key="safeArea" id="dya-a6-j4D"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SF7-T2-UYM"/>
+                    <connections>
+                        <outlet property="mapView" destination="7kU-Zy-W5I" id="4TM-Is-Fsj"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fik-Hg-HPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="-774"/>
+            <point key="canvasLocation" x="2157" y="-1577"/>
+        </scene>
+        <!--Bookmark-->
+        <scene sceneID="BEQ-o9-r4J">
+            <objects>
+                <viewController id="c97-Wj-9Z6" customClass="BookmarkVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HKr-Zg-t3f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QhM-xk-wpc">
+                                <rect key="frame" x="0.0" y="64" width="414" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="6tg-SL-fXo">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6tg-SL-fXo" id="qtR-pV-lYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Code : " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3e-r2-dev">
+                                <rect key="frame" x="20" y="647" width="116" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name :  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xe-1X-pr2">
+                                <rect key="frame" x="20" y="610" width="116" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RM-TK-Q99">
+                                <rect key="frame" x="161" y="606" width="233" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohR-Pm-8fB">
+                                <rect key="frame" x="161" y="643" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type : " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lje-3E-4aL">
+                                <rect key="frame" x="20" y="572" width="116" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gw-Mb-9Qo">
+                                <rect key="frame" x="161" y="568" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="irP-NB-uCN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bookmark" id="dQp-5g-3yQ" userLabel="Bookmark">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Nte-Ar-iwR">
+                            <connections>
+                                <action selector="RemoveBookmark:" destination="c97-Wj-9Z6" id="ryX-dQ-DuM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="lYf-Fh-IQW">
+                            <connections>
+                                <action selector="DoSearch:" destination="c97-Wj-9Z6" id="SNX-J7-7Z0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TableView" destination="QhM-xk-wpc" id="38n-SK-u5b"/>
+                        <outlet property="codelabel" destination="ohR-Pm-8fB" id="NWJ-XS-wS1"/>
+                        <outlet property="namelabel" destination="4RM-TK-Q99" id="q6v-d0-hLR"/>
+                        <outlet property="typelabel" destination="5Gw-Mb-9Qo" id="zrg-U7-SRn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="913-vk-0QH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-386.95652173913044" y="-51.358695652173914"/>
+        </scene>
+        <!--Subway Lines-->
+        <scene sceneID="ytZ-FG-Gah">
+            <objects>
+                <tableViewController title="Subway Lines" id="IR8-wm-7fk" customClass="SubLineTVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LlP-eE-r85">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="4Ps-T3-f3N">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ps-T3-f3N" id="Mr3-mp-926">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Gl6-pq-CVi" kind="show" identifier="SearchSubStation" id="QTI-mT-aGs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IR8-wm-7fk" id="9tV-Nd-Z35"/>
+                            <outlet property="delegate" destination="IR8-wm-7fk" id="Ia8-dN-Cuq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yeN-qZ-Nqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="-377"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Alz-OW-1s3">
+            <objects>
+                <tableViewController id="Gl6-pq-CVi" customClass="StationListTBC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kiG-N1-xrd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Cgm-b3-XUC">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cgm-b3-XUC" id="Dht-eu-0Qk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Uzk-ag-5aG" kind="show" identifier="SearchSubStationDetail" id="h3G-c0-J7P"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gl6-pq-CVi" id="XQS-wt-zMS"/>
+                            <outlet property="delegate" destination="Gl6-pq-CVi" id="aOV-FC-4RM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="XwO-Xe-iHR"/>
+                    <connections>
+                        <outlet property="ListTable" destination="kiG-N1-xrd" id="mhn-sy-UL4"/>
+                        <outlet property="naviItem" destination="XwO-Xe-iHR" id="XpS-wX-FxQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clE-rn-BeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="-377"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="oVW-JF-MrH">
+            <objects>
+                <viewController id="Uzk-ag-5aG" customClass="SubStationDetailVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J56-SM-zaS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-Lq-rvz">
+                                <rect key="frame" x="0.0" y="64" width="414" height="317"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="TEST" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfA-NQ-rVk">
+                                <rect key="frame" x="0.0" y="389" width="414" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0ML-f6-ySw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="MhG-aa-wpB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="r8S-fn-cdb">
+                            <connections>
+                                <segue destination="PWJ-eG-zHf" kind="show" identifier="SearchBusStationByPos" id="nmp-As-xfY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="MapView" destination="3cS-Lq-rvz" id="spC-HP-4Ra"/>
+                        <outlet property="naviItem" destination="MhG-aa-wpB" id="KUB-KQ-q3w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOC-JS-hlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="376"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="V76-1S-iav">
+            <objects>
+                <viewController id="PWJ-eG-zHf" customClass="SearchBusStationByPosVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JDA-eb-zdE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mMc-Ok-tJd">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OJd-G1-8rJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="IpQ-3S-hUk"/>
+                    <connections>
+                        <outlet property="MapView" destination="mMc-Ok-tJd" id="3v7-aC-lay"/>
+                        <segue destination="4rT-Nm-kql" kind="show" identifier="SearchBusStationDetail" id="cy5-bQ-LYd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVL-As-u7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156.521739130435" y="375.81521739130437"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4wy-kc-xuN">
@@ -280,11 +606,11 @@
             </objects>
             <point key="canvasLocation" x="-1903" y="-376"/>
         </scene>
-        <!--SEARCH-->
+        <!--Navigation Controller-->
         <scene sceneID="iIl-Ec-Flz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9QN-hb-DnU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SEARCH" id="ckE-Xk-AJ8">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="ckE-Xk-AJ8">
                         <color key="badgeColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -294,18 +620,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="yPl-x0-ySp" kind="relationship" relationship="rootViewController" id="V25-4L-cWg"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hRe-hm-YAQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jx-bs-G9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1046.376811594203" y="-774.45652173913049"/>
         </scene>
-        <!--Bookmark-->
+        <!--Navigation Controller-->
         <scene sceneID="QS4-23-Mc9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1vs-4w-qWp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmark" id="pzb-aT-dqF">
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="pzb-aT-dqF">
                         <color key="badgeColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -323,4 +649,8 @@
             <point key="canvasLocation" x="-1046.376811594203" y="-51.358695652173914"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kO6-bg-qD4"/>
+        <segue reference="cy5-bQ-LYd"/>
+    </inferredMetricsTieBreakers>
 </document>

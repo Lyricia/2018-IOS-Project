@@ -7,20 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11215AB20B2604A0019DD09 /* BookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11215AA20B2604A0019DD09 /* BookmarkVC.swift */; };
 		A14BB71320B0285000C58B43 /* BusStationSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */; };
 		A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71420B036D800C58B43 /* StationDetailVC.swift */; };
+		A15B985E20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B985D20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift */; };
 		A1BEF1992096B75E000BCD3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF1982096B75E000BCD3E /* AppDelegate.swift */; };
 		A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF19A2096B75E000BCD3E /* ViewController.swift */; };
 		A1BEF19E2096B75E000BCD3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BEF19C2096B75E000BCD3E /* Main.storyboard */; };
 		A1BEF1A02096B75F000BCD3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BEF19F2096B75F000BCD3E /* Assets.xcassets */; };
 		A1BEF1A32096B75F000BCD3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BEF1A12096B75F000BCD3E /* LaunchScreen.storyboard */; };
-		A1C651F020A19D4600629677 /* SubwayDetailDataTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C651EF20A19D4600629677 /* SubwayDetailDataTBC.swift */; };
+		A1C651F020A19D4600629677 /* SubwayDetailDataTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C651EF20A19D4600629677 /* SubwayDetailDataTVC.swift */; };
+		A1D1A02C20C939B700893F7D /* SubBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1D1A02A20C939B600893F7D /* SubBG.jpg */; };
+		A1D1A02D20C939B700893F7D /* BusBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1D1A02B20C939B600893F7D /* BusBG.jpg */; };
+		A1D1A02F20C9539A00893F7D /* SubLineTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A02E20C9539A00893F7D /* SubLineTVC.swift */; };
+		A1D1A03320C9555500893F7D /* StationListTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A03220C9555500893F7D /* StationListTBC.swift */; };
+		A1D1A03520C9585100893F7D /* SubDB.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D1A03420C9585000893F7D /* SubDB.json */; };
+		A1D1A03720C96D3B00893F7D /* SubwayLineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A03620C96D3B00893F7D /* SubwayLineData.swift */; };
+		A1D1A03B20C97BA000893F7D /* SubStationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A03A20C97BA000893F7D /* SubStationDetailVC.swift */; };
+		A1D4567E20C4E4C50083534E /* RouteMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4567D20C4E4C50083534E /* RouteMapVC.swift */; };
+		A1D8B93120BC8482001799BE /* bus_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D8B93020BC8482001799BE /* bus_stop.png */; };
+		A1D8B93320BC9FFE001799BE /* busstop.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D8B93220BC9FFE001799BE /* busstop.png */; };
+		A1D8B93520BCA625001799BE /* rot.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D8B93420BCA625001799BE /* rot.png */; };
 		A1DF6E4E2098581900CD296B /* DetailDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF6E4D2098581900CD296B /* DetailDataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A11215AA20B2604A0019DD09 /* BookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkVC.swift; sourceTree = "<group>"; };
 		A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStationSearchTVC.swift; sourceTree = "<group>"; };
 		A14BB71420B036D800C58B43 /* StationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailVC.swift; sourceTree = "<group>"; };
+		A15B985D20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusStationByPosVC.swift; sourceTree = "<group>"; };
 		A1BEF1952096B75E000BCD3E /* SubwayProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BEF1982096B75E000BCD3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1BEF19A2096B75E000BCD3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +43,18 @@
 		A1BEF19F2096B75F000BCD3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1BEF1A22096B75F000BCD3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1BEF1A42096B75F000BCD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1C651EF20A19D4600629677 /* SubwayDetailDataTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayDetailDataTBC.swift; sourceTree = "<group>"; };
+		A1C651EF20A19D4600629677 /* SubwayDetailDataTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayDetailDataTVC.swift; sourceTree = "<group>"; };
+		A1D1A02A20C939B600893F7D /* SubBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SubBG.jpg; sourceTree = "<group>"; };
+		A1D1A02B20C939B600893F7D /* BusBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BusBG.jpg; sourceTree = "<group>"; };
+		A1D1A02E20C9539A00893F7D /* SubLineTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLineTVC.swift; sourceTree = "<group>"; };
+		A1D1A03220C9555500893F7D /* StationListTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTBC.swift; sourceTree = "<group>"; };
+		A1D1A03420C9585000893F7D /* SubDB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubDB.json; sourceTree = "<group>"; };
+		A1D1A03620C96D3B00893F7D /* SubwayLineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineData.swift; sourceTree = "<group>"; };
+		A1D1A03A20C97BA000893F7D /* SubStationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubStationDetailVC.swift; sourceTree = "<group>"; };
+		A1D4567D20C4E4C50083534E /* RouteMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapVC.swift; sourceTree = "<group>"; };
+		A1D8B93020BC8482001799BE /* bus_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus_stop.png; sourceTree = "<group>"; };
+		A1D8B93220BC9FFE001799BE /* busstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = busstop.png; sourceTree = "<group>"; };
+		A1D8B93420BCA625001799BE /* rot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rot.png; sourceTree = "<group>"; };
 		A1DF6E4D2098581900CD296B /* DetailDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +69,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A11215A920B25EC00019DD09 /* BUS */ = {
+			isa = PBXGroup;
+			children = (
+				A14BB71420B036D800C58B43 /* StationDetailVC.swift */,
+				A1DF6E4D2098581900CD296B /* DetailDataTableViewController.swift */,
+				A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */,
+				A1D4567D20C4E4C50083534E /* RouteMapVC.swift */,
+				A15B985D20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift */,
+			);
+			path = BUS;
+			sourceTree = "<group>";
+		};
 		A1BEF18C2096B75E000BCD3E = {
 			isa = PBXGroup;
 			children = (
@@ -62,18 +100,51 @@
 		A1BEF1972096B75E000BCD3E /* SubwayProject */ = {
 			isa = PBXGroup;
 			children = (
-				A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */,
+				A1D8B93920BCAF50001799BE /* Subway */,
+				A1D8B93820BCAF3F001799BE /* Bookmark */,
+				A1D8B92F20BC840A001799BE /* Image */,
+				A11215A920B25EC00019DD09 /* BUS */,
 				A1BEF1982096B75E000BCD3E /* AppDelegate.swift */,
 				A1BEF19A2096B75E000BCD3E /* ViewController.swift */,
 				A1BEF19C2096B75E000BCD3E /* Main.storyboard */,
 				A1BEF19F2096B75F000BCD3E /* Assets.xcassets */,
 				A1BEF1A12096B75F000BCD3E /* LaunchScreen.storyboard */,
 				A1BEF1A42096B75F000BCD3E /* Info.plist */,
-				A1DF6E4D2098581900CD296B /* DetailDataTableViewController.swift */,
-				A1C651EF20A19D4600629677 /* SubwayDetailDataTBC.swift */,
-				A14BB71420B036D800C58B43 /* StationDetailVC.swift */,
 			);
 			path = SubwayProject;
+			sourceTree = "<group>";
+		};
+		A1D8B92F20BC840A001799BE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A1D1A02B20C939B600893F7D /* BusBG.jpg */,
+				A1D1A02A20C939B600893F7D /* SubBG.jpg */,
+				A1D8B93420BCA625001799BE /* rot.png */,
+				A1D8B93220BC9FFE001799BE /* busstop.png */,
+				A1D8B93020BC8482001799BE /* bus_stop.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A1D8B93820BCAF3F001799BE /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				A11215AA20B2604A0019DD09 /* BookmarkVC.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		A1D8B93920BCAF50001799BE /* Subway */ = {
+			isa = PBXGroup;
+			children = (
+				A1D1A03420C9585000893F7D /* SubDB.json */,
+				A1C651EF20A19D4600629677 /* SubwayDetailDataTVC.swift */,
+				A1D1A02E20C9539A00893F7D /* SubLineTVC.swift */,
+				A1D1A03220C9555500893F7D /* StationListTBC.swift */,
+				A1D1A03620C96D3B00893F7D /* SubwayLineData.swift */,
+				A1D1A03A20C97BA000893F7D /* SubStationDetailVC.swift */,
+			);
+			path = Subway;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +205,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D1A02C20C939B700893F7D /* SubBG.jpg in Resources */,
+				A1D8B93320BC9FFE001799BE /* busstop.png in Resources */,
 				A1BEF1A32096B75F000BCD3E /* LaunchScreen.storyboard in Resources */,
+				A1D1A02D20C939B700893F7D /* BusBG.jpg in Resources */,
+				A1D1A03520C9585100893F7D /* SubDB.json in Resources */,
 				A1BEF1A02096B75F000BCD3E /* Assets.xcassets in Resources */,
+				A1D8B93520BCA625001799BE /* rot.png in Resources */,
+				A1D8B93120BC8482001799BE /* bus_stop.png in Resources */,
 				A1BEF19E2096B75E000BCD3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,12 +224,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D1A03720C96D3B00893F7D /* SubwayLineData.swift in Sources */,
 				A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */,
+				A11215AB20B2604A0019DD09 /* BookmarkVC.swift in Sources */,
 				A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */,
-				A1C651F020A19D4600629677 /* SubwayDetailDataTBC.swift in Sources */,
+				A15B985E20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift in Sources */,
+				A1D1A03320C9555500893F7D /* StationListTBC.swift in Sources */,
+				A1D1A02F20C9539A00893F7D /* SubLineTVC.swift in Sources */,
+				A1C651F020A19D4600629677 /* SubwayDetailDataTVC.swift in Sources */,
+				A1D1A03B20C97BA000893F7D /* SubStationDetailVC.swift in Sources */,
 				A1BEF1992096B75E000BCD3E /* AppDelegate.swift in Sources */,
 				A14BB71320B0285000C58B43 /* BusStationSearchTVC.swift in Sources */,
 				A1DF6E4E2098581900CD296B /* DetailDataTableViewController.swift in Sources */,
+				A1D4567E20C4E4C50083534E /* RouteMapVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

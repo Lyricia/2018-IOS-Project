@@ -13,7 +13,12 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
    
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var TextView: UITextView!
-    
+    @IBOutlet weak var titleitem: UINavigationItem!
+
+    @IBAction func AddBookmark(_ sender: Any) {
+        let data = bookmarkdata(_type: "BusStation", _name: titleitem.title!, _code: input)
+        Bookmark.Instance.savedata(data: data)
+    }
     
     var input = ""
     var url : String?
@@ -31,7 +36,6 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
     var gpsX = NSMutableString()
     var gpsY = NSMutableString()
     
-    
     override func viewDidLoad() {
         url = "http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&arsId=" + input
 
@@ -47,10 +51,21 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
         
         let lat = (gpsY as NSString).doubleValue
         let lon = (gpsX as NSString).doubleValue
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(CLLocation(latitude: lat, longitude: lon).coordinate, 500, 500)
+        let pos = CLLocation(latitude: lat, longitude: lon)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(pos.coordinate, 500, 500)
+        let sourcePlacemark = MKPlacemark(coordinate: pos.coordinate, addressDictionary: nil)
+        let sourceAnnotation = MKPointAnnotation()
+        sourceAnnotation.title = String(stNm)
+        
+        if let location = sourcePlacemark.location {
+            sourceAnnotation.coordinate = location.coordinate
+        }
+        self.MapView.showAnnotations([sourceAnnotation], animated: true )
+        
         MapView.setRegion(coordinateRegion, animated: true)
             
         TextView.text.append(String(stNm) + "\n\n")
+        titleitem.title = String(stNm)
         
         for post in posts{
             let route = (post as AnyObject).value(forKey:"rtNm") as! NSString as String

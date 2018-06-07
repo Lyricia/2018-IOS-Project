@@ -7,36 +7,62 @@
 //
 
 import UIKit
-
+class stationCell : UITableViewCell{
+    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var rotimage: UIImageView!
+}
 
 class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
     @IBOutlet var DetailTable: UITableView!
+    @IBOutlet weak var titleitem: UINavigationItem!
+    @IBAction func AddBookmark(_ sender: Any) {
+        let data = bookmarkdata(_type: "BusRoute", _name: routename, _code: routeinput)
+        Bookmark.Instance.savedata(data: data)
+    }
     
-    var input = ""
+    var routeinput = ""
+    var routename = ""
+    
+    var parsingval = 0
     var url : String?
     
     var parser = XMLParser()
     
     var posts = NSMutableArray()
+    var BusArrival = NSMutableArray()
+    var arrivalcounter = 0
     
     var elements = NSMutableDictionary()
     var element = NSString()
 
     var stationNo = NSMutableString()
     var stationNm = NSMutableString()
+    var transYn = NSMutableString()
+    
+    var sectOrd = NSMutableString()
     
     var selectedStationNo = ""
     
     override func viewDidLoad() {
-        url = "http://ws.bus.go.kr/api/rest/busRouteInfo/getStaionByRoute?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&busRouteId=" + input
         super.viewDidLoad()
-        beginParsing()
+        titleitem.title = routename
         
-
+        url = "http://ws.bus.go.kr/api/rest/busRouteInfo/getStaionByRoute?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&busRouteId=" + routeinput
+        beginParsing()
+        parsingval = 1
+        arrivalcounter = 0
+        url = "http://ws.bus.go.kr/api/rest/buspos/getBusPosByRtid?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&busRouteId=" + routeinput
+        beginParsing()
     }
 
     func beginParsing(){
-        posts = []
+        if parsingval == 0 {
+            posts = []
+        }
+        else if parsingval == 1 {
+            BusArrival = []
+        }
         parser = XMLParser(contentsOf:(URL(string:url!))!)!
         parser.delegate = self
         parser.parse()
@@ -54,6 +80,11 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
                 }
             }
         }
+        if segue.identifier == "BusRouteSearch"{
+            if let viewController = segue.destination as? RouteMapVC{
+                viewController.input = routeinput
+            }
+        }
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName:String?, attributes attributeDict: [String:String])
@@ -67,6 +98,11 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
             stationNo = ""
             stationNm = NSMutableString()
             stationNm = ""
+            transYn = NSMutableString()
+            transYn = ""
+            
+            sectOrd = NSMutableString()
+            sectOrd = ""
         }
     }
     
@@ -78,18 +114,36 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
         if element.isEqual(to: "stationNm"){
             stationNm.append(string)
         }
+        if element.isEqual(to: "transYn"){
+            transYn.append(string)
+        }
+        if element.isEqual(to: "sectOrd"){
+            sectOrd.append(string)
+        }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "itemList"){
-            if !stationNo.isEqual(nil){
-                elements.setObject(stationNo, forKey: "stationNo" as NSCopying)
+            if parsingval == 0 {
+                if !stationNo.isEqual(nil){
+                    elements.setObject(stationNo, forKey: "stationNo" as NSCopying)
+                }
+                if !stationNm.isEqual(nil){
+                    elements.setObject(stationNm, forKey: "stationNm" as NSCopying)
+                }
+                if !transYn.isEqual(nil){
+                    elements.setObject(transYn, forKey: "transYn" as NSCopying)
+                }
+                posts.add(elements)
             }
-            if !stationNm.isEqual(nil){
-                elements.setObject(stationNm, forKey: "stationNm" as NSCopying)
+            else if parsingval == 1 {
+                if !sectOrd.isEqual(nil){
+                    elements.setObject(sectOrd, forKey: "sectOrd" as NSCopying)
+                }
+                BusArrival.add(elements)
+                arrivalcounter+=1
             }
-            posts.add(elements)
         }
     }
     
@@ -134,9 +188,32 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! stationCell
         
-        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "stationNm") as! NSString as String
+        let name = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "stationNm") as! NSString as String
+        cell.name?.text = name
+        
+        if ((posts.object(at: indexPath.row) as AnyObject).value(forKey: "transYn") as! NSString as String) == "Y"{
+            cell.rotimage?.image = UIImage(named: "rot.png")
+        }
+        else{
+            cell.rotimage?.image = UIImage(named: "")
+        }
+        
+        for index in 0..<BusArrival.count {
+            let stidx = Int((BusArrival.object(at: index) as AnyObject).value(forKey: "sectOrd") as! NSString as String)
+            if (stidx! - 1) == indexPath.row {
+                cell.backgroundColor = UIColor.yellow
+                cell.imageview?.image = UIImage(named: "busstop.png")
+                break
+            }
+            else{
+                cell.backgroundColor = UIColor.clear
+                cell.imageview?.image = UIImage(named : "")
+            }
+        }
+        
+        
         
         return cell
     }
