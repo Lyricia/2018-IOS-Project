@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BookmarkVC.prepare(for:sender:):BookmarkVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.identifier">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BusStationSearchTVC.viewDidLoad():BusStationSearchTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BusArrival">
+            </PersistentString>
+            <PersistentString
+               value = "posts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StationDetailVC.viewDidLoad():StationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "input">
+            </PersistentString>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.beginParsing():SubStationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "XPOINT_WGS">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RouteMapVC.createPolyline(mapView:):RouteMapVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.routeCoord[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CollapseAllData():SubwayLineData.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lineall">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BusStationSearchTVC.tableView(_:cellForRowAt:):BusStationSearchTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BusArrival">
+            </PersistentString>
+            <PersistentString
+               value = "(BusArrival.object(at: index) as AnyObject).value(forKey: &quot;sectOrd&quot;) as! NSString as String">
+            </PersistentString>
+            <PersistentString
+               value = "routeinput">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.viewDidLoad():SubStationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "StationData">
+            </PersistentString>
+            <PersistentString
+               value = "code != &quot;&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "findStation(name:):SubwayLineData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StationDetailVC.beginParsing():StationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "input">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookmarkVC.viewDidLoad():BookmarkVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myarray">
+            </PersistentString>
+            <PersistentString
+               value = "r_Bus">
+            </PersistentString>
+            <PersistentString
+               value = "bookmarktest">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BusStationSearchTVC.parser(_:didEndElement:namespaceURI:qualifiedName:):BusStationSearchTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BusArrival">
+            </PersistentString>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StationListTBC.viewDidLoad():StationListTBC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "linedata[0][&quot;station_nm&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.prepare(for:sender:):SubStationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "StationData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubwayDetailDataTBC.prepare(for:sender:):SubwayDetailDataTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "datalist">
+            </PersistentString>
+            <PersistentString
+               value = "(posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey:&quot;subwayStationId&quot;) as! NSString as String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchBusStationByPosVC.viewDidLoad():SearchBusStationByPosVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchBusStationByPosVC.mapView(_:annotationView:calloutAccessoryControlTapped:):SearchBusStationByPosVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedStationNo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchBusStationByPosVC.prepare(for:sender:):SearchBusStationByPosVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SearchBusStationByPosTVC.viewDidLoad():SearchBusStationByPosTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubwayDetailDataTBC.viewDidLoad():SubwayDetailDataTVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "datalist">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
