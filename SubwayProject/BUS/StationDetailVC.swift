@@ -14,10 +14,19 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var TextView: UITextView!
     @IBOutlet weak var titleitem: UINavigationItem!
-
+    @IBOutlet weak var BookmarkButton: UIBarButtonItem!
     @IBAction func AddBookmark(_ sender: Any) {
-        let data = bookmarkdata(_type: "BusStation", _name: titleitem.title!, _code: input)
-        Bookmark.Instance.savedata(data: data)
+        if isBookmarked == true{
+            Bookmark.Instance.removedata(name: titleitem.title!)
+            isBookmarked = false
+            BookmarkButton.tintColor = nil
+        }
+        else {
+            let data = bookmarkdata(_type: "BusStation", _name: titleitem.title!, _code: input)
+            Bookmark.Instance.savedata(data: data)
+            BookmarkButton.tintColor = UIColor.red
+            isBookmarked = true
+        }
     }
     
     var input = ""
@@ -36,11 +45,20 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
     var gpsX = NSMutableString()
     var gpsY = NSMutableString()
     
+    var isBookmarked = false
+    
     override func viewDidLoad() {
         url = "http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&arsId=" + input
 
         super.viewDidLoad()
         beginParsing()
+        
+        for data in Bookmark.Instance.list {
+            if data.name == titleitem.title! {
+                isBookmarked = true
+                BookmarkButton.tintColor = UIColor.red
+            }
+        }
     }
     
     func beginParsing(){

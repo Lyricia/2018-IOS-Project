@@ -16,9 +16,19 @@ class stationCell : UITableViewCell{
 class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
     @IBOutlet var DetailTable: UITableView!
     @IBOutlet weak var titleitem: UINavigationItem!
+    @IBOutlet weak var BookmarkButton: UIBarButtonItem!
     @IBAction func AddBookmark(_ sender: Any) {
-        let data = bookmarkdata(_type: "BusRoute", _name: routename, _code: routeinput)
-        Bookmark.Instance.savedata(data: data)
+        if isBookmarked == true{
+            Bookmark.Instance.removedata(name: routename)
+            isBookmarked = false
+            BookmarkButton.tintColor = UIColor.blue
+        }
+        else {
+            let data = bookmarkdata(_type: "BusRoute", _name: routename, _code: routeinput)
+            Bookmark.Instance.savedata(data: data)
+            BookmarkButton.tintColor = UIColor.red
+            isBookmarked = true
+        }
     }
     
     var routeinput = ""
@@ -44,9 +54,18 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
     
     var selectedStationNo = ""
     
+    var isBookmarked = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleitem.title = routename
+        
+        for data in Bookmark.Instance.list {
+            if data.name == routename {
+                isBookmarked = true
+                BookmarkButton.tintColor = UIColor.red
+            }
+        }
         
         url = "http://ws.bus.go.kr/api/rest/busRouteInfo/getStaionByRoute?serviceKey=hhMaFcQqWZECMqbHc3G%2BhOy1odmISfqSHDq1oejzW2%2Fsrln0q%2BIDKNQgYXX2B%2B5mHYvDqE7LXtkyLrJWDcacUg%3D%3D&busRouteId=" + routeinput
         beginParsing()

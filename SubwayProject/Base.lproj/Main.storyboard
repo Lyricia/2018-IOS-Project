@@ -269,19 +269,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="whe-we-xj0">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="bookmarks" id="Jox-Ca-R7t">
-                                <connections>
-                                    <action selector="AddBookmark:" destination="Vxw-LX-7RN" id="Zq2-EF-6PQ"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem systemItem="search" id="Egm-L1-0I1">
                                 <connections>
                                     <segue destination="bLR-fN-MQl" kind="show" identifier="BusRouteSearch" id="1mc-Lv-dAi"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="bookmarks" id="Jox-Ca-R7t">
+                                <connections>
+                                    <action selector="AddBookmark:" destination="Vxw-LX-7RN" id="Zq2-EF-6PQ"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="BookmarkButton" destination="Jox-Ca-R7t" id="xlN-vO-Mwk"/>
                         <outlet property="DetailTable" destination="gb7-wR-JH2" id="Eth-JJ-Tun"/>
                         <outlet property="titleitem" destination="whe-we-xj0" id="my0-It-4Yt"/>
                     </connections>
@@ -331,6 +332,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="BookmarkButton" destination="g7c-K7-99W" id="0El-47-DIC"/>
                         <outlet property="MapView" destination="AhE-il-95V" id="i18-yJ-bEJ"/>
                         <outlet property="TextView" destination="oa1-nj-Up7" id="8ih-ot-Ke5"/>
                         <outlet property="titleitem" destination="14s-pn-KIl" id="hx8-Vu-FfW"/>
@@ -526,7 +528,7 @@
         <!--Title-->
         <scene sceneID="oVW-JF-MrH">
             <objects>
-                <viewController id="Uzk-ag-5aG" customClass="SubStationDetailVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubStationVC" id="Uzk-ag-5aG" customClass="SubStationDetailVC" customModule="SubwayProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J56-SM-zaS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -535,11 +537,11 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="TEST" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfA-NQ-rVk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfA-NQ-rVk">
                                 <rect key="frame" x="0.0" y="389" width="414" height="298"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -547,14 +549,23 @@
                         <viewLayoutGuide key="safeArea" id="0ML-f6-ySw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="MhG-aa-wpB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="r8S-fn-cdb">
-                            <connections>
-                                <segue destination="PWJ-eG-zHf" kind="show" identifier="SearchBusStationByPos" id="nmp-As-xfY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="r8S-fn-cdb">
+                                <connections>
+                                    <segue destination="PWJ-eG-zHf" kind="show" identifier="SearchBusStationByPos" id="nmp-As-xfY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="bookmarks" id="7cp-Um-7t9">
+                                <connections>
+                                    <action selector="AddBookmark:" destination="Uzk-ag-5aG" id="MQK-5L-Q5J"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="BookmarkButton" destination="7cp-Um-7t9" id="Fd4-3p-6I8"/>
                         <outlet property="MapView" destination="3cS-Lq-rvz" id="spC-HP-4Ra"/>
+                        <outlet property="TextView" destination="dfA-NQ-rVk" id="nPy-n1-BtY"/>
                         <outlet property="naviItem" destination="MhG-aa-wpB" id="KUB-KQ-q3w"/>
                     </connections>
                 </viewController>
@@ -651,6 +662,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kO6-bg-qD4"/>
-        <segue reference="cy5-bQ-LYd"/>
+        <segue reference="KrU-VG-6C3"/>
     </inferredMetricsTieBreakers>
 </document>

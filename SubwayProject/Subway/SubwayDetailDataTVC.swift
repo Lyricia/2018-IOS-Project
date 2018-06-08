@@ -15,7 +15,7 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
     var input = ""
     
     override func viewDidLoad() {
-        datalist = findStation(name: input)
+        datalist = findStations(name: input)
 
         super.viewDidLoad()
     }
@@ -24,9 +24,7 @@ class SubwayDetailDataTBC: UITableViewController, XMLParserDelegate  {
         if segue.identifier == "SearchSubStationDetail"{
             if let cell = sender as? UITableViewCell{
                 let indexPath = tableView.indexPath(for: cell)
-                let code = datalist[indexPath!.row]["fr_code"] as? String
                 if let ViewController = segue.destination as? SubStationDetailVC{
-                    ViewController.code = code!
                     ViewController.StationData = datalist[(indexPath?.row)!]
                 }
             }

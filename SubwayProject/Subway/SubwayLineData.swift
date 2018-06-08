@@ -106,7 +106,19 @@ func CollapseAllData() {
     lineall.append(contentsOf: lineI2)
 }
 
-func findStation(name : String) -> [[AnyHashable : Any]]{
+func findStation(code : String) -> [AnyHashable : Any]{
+    var result = [AnyHashable : Any]()
+    
+    for data in lineall{
+        if (data["fr_code"] as! String) == code{
+            result = data
+        }
+    }
+    
+    return result
+}
+
+func findStations(name : String) -> [[AnyHashable : Any]]{
     var datalist = [[:]]
     datalist.remove(at: 0)
     

@@ -10,6 +10,7 @@
 		A11215AB20B2604A0019DD09 /* BookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11215AA20B2604A0019DD09 /* BookmarkVC.swift */; };
 		A14BB71320B0285000C58B43 /* BusStationSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */; };
 		A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB71420B036D800C58B43 /* StationDetailVC.swift */; };
+		A15316AB20CB117F005DE545 /* BookmarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15316AA20CB117F005DE545 /* BookmarkData.swift */; };
 		A15B985E20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B985D20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift */; };
 		A1BEF1992096B75E000BCD3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF1982096B75E000BCD3E /* AppDelegate.swift */; };
 		A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEF19A2096B75E000BCD3E /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		A11215AA20B2604A0019DD09 /* BookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkVC.swift; sourceTree = "<group>"; };
 		A14BB71220B0285000C58B43 /* BusStationSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStationSearchTVC.swift; sourceTree = "<group>"; };
 		A14BB71420B036D800C58B43 /* StationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailVC.swift; sourceTree = "<group>"; };
+		A15316AA20CB117F005DE545 /* BookmarkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkData.swift; sourceTree = "<group>"; };
 		A15B985D20C9AFB000AD91A9 /* SearchBusStationByPosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusStationByPosVC.swift; sourceTree = "<group>"; };
 		A1BEF1952096B75E000BCD3E /* SubwayProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BEF1982096B75E000BCD3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				A1D8B93920BCAF50001799BE /* Subway */,
+				A11215A920B25EC00019DD09 /* BUS */,
 				A1D8B93820BCAF3F001799BE /* Bookmark */,
 				A1D8B92F20BC840A001799BE /* Image */,
-				A11215A920B25EC00019DD09 /* BUS */,
 				A1BEF1982096B75E000BCD3E /* AppDelegate.swift */,
 				A1BEF19A2096B75E000BCD3E /* ViewController.swift */,
 				A1BEF19C2096B75E000BCD3E /* Main.storyboard */,
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A11215AA20B2604A0019DD09 /* BookmarkVC.swift */,
+				A15316AA20CB117F005DE545 /* BookmarkData.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D1A03720C96D3B00893F7D /* SubwayLineData.swift in Sources */,
+				A15316AB20CB117F005DE545 /* BookmarkData.swift in Sources */,
 				A14BB71520B036D800C58B43 /* StationDetailVC.swift in Sources */,
 				A11215AB20B2604A0019DD09 /* BookmarkVC.swift in Sources */,
 				A1BEF19B2096B75E000BCD3E /* ViewController.swift in Sources */,

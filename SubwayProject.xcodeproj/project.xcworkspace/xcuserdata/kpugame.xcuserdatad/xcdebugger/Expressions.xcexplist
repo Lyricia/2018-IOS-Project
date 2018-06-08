@@ -77,13 +77,33 @@
          contextName = "SubStationDetailVC.viewDidLoad():SubStationDetailVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "code">
+            </PersistentString>
+            <PersistentString
+               value = "total.intValue">
+            </PersistentString>
+            <PersistentString
+               value = "suturl">
+            </PersistentString>
+            <PersistentString
                value = "StationData">
+            </PersistentString>
+            <PersistentString
+               value = "posts">
             </PersistentString>
             <PersistentString
                value = "code != &quot;&quot;">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.parser(_:foundCharacters:):SubStationDetailVC.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "code">
+               value = "total">
+            </PersistentString>
+            <PersistentString
+               value = "element">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -163,6 +183,31 @@
          <PersistentStrings>
             <PersistentString
                value = "selectedStationNo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.setMapPosition():SubStationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SubStationDetailVC.parser(_:didEndElement:namespaceURI:qualifiedName:):SubStationDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "posts">
+            </PersistentString>
+            <PersistentString
+               value = "lat">
+            </PersistentString>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "elements">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
