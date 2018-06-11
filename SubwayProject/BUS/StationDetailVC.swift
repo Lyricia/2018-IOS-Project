@@ -20,12 +20,14 @@ class StationDetailVC: UIViewController, XMLParserDelegate {
             Bookmark.Instance.removedata(name: titleitem.title!)
             isBookmarked = false
             BookmarkButton.tintColor = nil
+            SoundManager.Instance.PlaySound(type: 0)
         }
         else {
             let data = bookmarkdata(_type: "BusStation", _name: titleitem.title!, _code: input)
             Bookmark.Instance.savedata(data: data)
             BookmarkButton.tintColor = UIColor.red
             isBookmarked = true
+            SoundManager.Instance.PlaySound(type: 1)
         }
     }
     

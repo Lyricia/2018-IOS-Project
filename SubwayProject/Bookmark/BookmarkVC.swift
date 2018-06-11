@@ -18,6 +18,10 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var codelabel: UILabel!
     
+    @IBOutlet weak var TrashButton: UIBarButtonItem!
+    
+    @IBOutlet weak var ParticleButton: UIButton!
+
     @IBAction func DoSearch(_ sender: Any) {
         searchController.isActive = false
         shouldShowSearchResults = false
@@ -43,6 +47,14 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     
     @IBAction func RemoveBookmark(_ sender: Any) {
+        let explore = ExplodeView(
+            frame: CGRect(x : (ParticleButton.imageView?.center.x)!, y:(ParticleButton.imageView?.center.y)!,
+                          width : 1000,
+                          height : 1000
+        ))
+        ParticleButton.imageView?.superview?.addSubview(explore)
+        ParticleButton.imageView?.superview?.sendSubview(toBack: explore)
+        
         if (selectedidx == -1){
             return
         }
@@ -52,6 +64,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         typelabel.text = ""
         namelabel.text = ""
         codelabel.text = ""
+        SoundManager.Instance.PlaySound(type: 1)
     }
     
     var selectedidx = -1
@@ -128,6 +141,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             data = Bookmark.Instance.list[indexPath.row]
         }
         selectedData = data
+        selectedidx = indexPath.row
         typelabel.text = data.type
         namelabel.text = data.name
         codelabel.text = data.code

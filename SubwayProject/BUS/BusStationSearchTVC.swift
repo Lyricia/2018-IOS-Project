@@ -22,12 +22,14 @@ class BusStationSearchTVC: UITableViewController, XMLParserDelegate {
             Bookmark.Instance.removedata(name: routename)
             isBookmarked = false
             BookmarkButton.tintColor = UIColor.blue
+            SoundManager.Instance.PlaySound(type: 0)
         }
         else {
             let data = bookmarkdata(_type: "BusRoute", _name: routename, _code: routeinput)
             Bookmark.Instance.savedata(data: data)
             BookmarkButton.tintColor = UIColor.red
             isBookmarked = true
+            SoundManager.Instance.PlaySound(type: 1)
         }
     }
     

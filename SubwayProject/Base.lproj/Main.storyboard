@@ -431,6 +431,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-sU-jhc">
+                                <rect key="frame" x="0.0" y="64" width="14" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="irP-NB-uCN"/>
@@ -448,7 +452,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ParticleButton" destination="hQW-sU-jhc" id="hka-iX-495"/>
                         <outlet property="TableView" destination="QhM-xk-wpc" id="38n-SK-u5b"/>
+                        <outlet property="TrashButton" destination="Nte-Ar-iwR" id="8F8-Ou-iIw"/>
                         <outlet property="codelabel" destination="ohR-Pm-8fB" id="NWJ-XS-wS1"/>
                         <outlet property="namelabel" destination="4RM-TK-Q99" id="q6v-d0-hLR"/>
                         <outlet property="typelabel" destination="5Gw-Mb-9Qo" id="zrg-U7-SRn"/>

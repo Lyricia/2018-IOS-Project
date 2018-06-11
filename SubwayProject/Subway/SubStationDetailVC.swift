@@ -19,12 +19,14 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
             Bookmark.Instance.removedata(name: StationData["station_nm"] as! String)
             isBookmarked = false
             BookmarkButton.tintColor = nil
+            SoundManager.Instance.PlaySound(type: 0)
         }
         else {
             let data = bookmarkdata(_type: "SubStation", _name: StationData["station_nm"] as! String, _code: StationData["fr_code"] as! String)
             Bookmark.Instance.savedata(data: data)
             BookmarkButton.tintColor = UIColor.red
             isBookmarked = true
+            SoundManager.Instance.PlaySound(type: 1)
         }
     }
     
@@ -49,6 +51,7 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
     var arvlMsg2 = NSMutableString()
     var arvlMsg3 = NSMutableString()
     var trainLineNm = NSMutableString()
+    var subwayId = NSMutableString()
     
     var total = NSMutableString()
     
@@ -58,8 +61,28 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
     
     var counter = 0
     
+    let lineidmatcher = [
+        "1001" : "1호선",
+        "1002" : "2호선",
+        "1003" : "3호선",
+        "1004" : "4호선",
+        "1005" : "5호선",
+        "1006" : "6호선",
+        "1007" : "7호선",
+        "1008" : "8호선",
+        "1009" : "9호선",
+        "1063" : "경의중앙선",
+        "1067" : "경춘선",
+        "1075" : "분당선",
+        "1071" : "수인선",
+        "1077" : "신분당선",
+        "1065" : "공항철도"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         naviItem.title = StationData["station_nm"] as? String
         code = StationData["fr_code"] as! String
         strutf8 = (StationData["station_nm"] as? String)!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -80,12 +103,14 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
         url = "http://swopenapi.seoul.go.kr/api/subway/744255744663686f3130305667654b73/xml/realtimeStationArrival/1/100/" + strutf8!
         beginParsing()
         
+        
         for post in posts{
+            let subwaylineid = lineidmatcher[(post as AnyObject).value(forKey:"subwayId") as! NSString as String]
             let trainLineNm = (post as AnyObject).value(forKey:"trainLineNm") as! NSString as String
             let arvlMsg2 = (post as AnyObject).value(forKey:"arvlMsg2") as! NSString as String
             let arvlMsg3 = (post as AnyObject).value(forKey:"arvlMsg3") as! NSString as String
             
-            TextView.text.append(String(trainLineNm) + "\n")
+            TextView.text.append(subwaylineid! + "   " + String(trainLineNm) + "\n")
             TextView.text.append("현재 위치 : " + String(arvlMsg3) + "\n")
             TextView.text.append("도착 시간 : " + String(arvlMsg2) + "\n")
             
@@ -149,6 +174,8 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
             arvlMsg3 = ""
             trainLineNm = NSMutableString()
             trainLineNm = ""
+            subwayId = NSMutableString()
+            subwayId = ""
         }
     }
     
@@ -174,6 +201,9 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
         }
         if element.isEqual(to: "trainLineNm"){
             trainLineNm.append(string)
+        }
+        if element.isEqual(to: "subwayId"){
+            subwayId.append(string)
         }
     }
     
@@ -203,6 +233,10 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
                 if !trainLineNm.isEqual(nil){
                     elements.setObject(trainLineNm, forKey: "trainLineNm" as NSCopying)
                 }
+                if !subwayId.isEqual(nil){
+                    elements.setObject(subwayId, forKey: "subwayId" as NSCopying)
+                }
+
                 posts.add(elements)
                 counter += counter + 1
             }
