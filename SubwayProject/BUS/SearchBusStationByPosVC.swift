@@ -12,6 +12,8 @@ import MapKit
 class SearchBusStationByPosVC: UIViewController, XMLParserDelegate, MKMapViewDelegate {
     @IBOutlet weak var MapView: MKMapView!
     
+    @IBOutlet weak var TitleBar: UINavigationItem!
+    
     var lat : Double = 0
     var lon : Double = 0
     
@@ -65,6 +67,7 @@ class SearchBusStationByPosVC: UIViewController, XMLParserDelegate, MKMapViewDel
         self.MapView.showAnnotations([sourceAnnotation], animated: true)
         
         MapView.setRegion(coordinateRegion, animated: true)
+        TitleBar.title = SubStationNm
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

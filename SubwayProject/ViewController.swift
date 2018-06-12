@@ -13,16 +13,12 @@ class ViewController: UIViewController{
     var inputBusname : String?
     var inputSubwayname : String?
     
+    @IBOutlet weak var RightArrow: UIImageView!
+    
+    
     @IBOutlet weak var FrontView: UIView!
     @IBOutlet weak var BehindView: UIView!
     var flipped = false
-    @IBAction func flipView(_ sender: Any) {
-//        flipped = !flipped
-//        let fromview = flipped ? FrontView : BehindView
-//        let toview = flipped ? BehindView : FrontView
-//        UIView.transition(from: fromview!, to: toview!, duration: 0.5, options: [.transitionFlipFromRight, .showHideTransitionViews])
-        print("tapped")
-    }
 
     @IBAction func SwipeView(_ sender: Any) {
         flipped = !flipped

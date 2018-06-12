@@ -78,7 +78,7 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
         "1077" : "신분당선",
         "1065" : "공항철도"
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -143,8 +143,8 @@ class SubStationDetailVC: UIViewController, XMLParserDelegate{
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         if segue.identifier == "SearchBusStationByPos"{
             if let TVC = segue.destination as? SearchBusStationByPosVC{
-                TVC.lat = (XPOINT_WGS as NSString).doubleValue
-                TVC.lon = (YPOINT_WGS as NSString).doubleValue
+                TVC.lat = lat!
+                TVC.lon = lon!
                 TVC.SubStationNm = StationData["station_nm"] as! String
             }
         }

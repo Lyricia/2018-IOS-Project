@@ -85,6 +85,14 @@
                                         <color key="backgroundColor" red="0.55239792840000002" green="1" blue="0.81580249890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="dF2-R6-qub">
+                                        <rect key="frame" x="372" y="235" width="42" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LeftArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZNn-cJ-WIW">
+                                        <rect key="frame" x="0.0" y="235" width="42" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -102,6 +110,7 @@
                         <outlet property="BusName" destination="cHI-gS-uaH" id="ZEr-jd-EYi"/>
                         <outlet property="ButtonSearch" destination="lt3-cm-P3f" id="L5o-GR-7RA"/>
                         <outlet property="FrontView" destination="6rg-OS-ge4" id="JwR-JG-ldq"/>
+                        <outlet property="RightArrow" destination="dF2-R6-qub" id="Ybj-1B-J9D"/>
                         <outlet property="SubwayName" destination="fUy-Ym-6I3" id="38L-bT-SVq"/>
                         <outlet property="searchDisplayController" destination="OAo-1d-p4d" id="lI0-mo-BqB"/>
                     </connections>
@@ -598,6 +607,7 @@
                     <navigationItem key="navigationItem" title="Title" id="IpQ-3S-hUk"/>
                     <connections>
                         <outlet property="MapView" destination="mMc-Ok-tJd" id="3v7-aC-lay"/>
+                        <outlet property="TitleBar" destination="IpQ-3S-hUk" id="Lm3-pV-z8b"/>
                         <segue destination="4rT-Nm-kql" kind="show" identifier="SearchBusStationDetail" id="cy5-bQ-LYd"/>
                     </connections>
                 </viewController>
@@ -666,8 +676,12 @@
             <point key="canvasLocation" x="-1046.376811594203" y="-51.358695652173914"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LeftArrow.png" width="2000" height="2000"/>
+        <image name="RightArrow.png" width="2000" height="2000"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kO6-bg-qD4"/>
-        <segue reference="KrU-VG-6C3"/>
+        <segue reference="cy5-bQ-LYd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -44,6 +44,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SearchBusStationByPosVC.init(coder:):SearchBusStationByPosVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in RouteMapVC.createPolyline(mapView:):RouteMapVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -77,13 +85,13 @@
          contextName = "SubStationDetailVC.viewDidLoad():SubStationDetailVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "code">
-            </PersistentString>
-            <PersistentString
                value = "total.intValue">
             </PersistentString>
             <PersistentString
                value = "suturl">
+            </PersistentString>
+            <PersistentString
+               value = "code">
             </PersistentString>
             <PersistentString
                value = "StationData">
@@ -176,13 +184,8 @@
             <PersistentString
                value = "lat">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchBusStationByPosVC.mapView(_:annotationView:calloutAccessoryControlTapped:):SearchBusStationByPosVC.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "selectedStationNo">
+               value = "url">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -191,6 +194,14 @@
          <PersistentStrings>
             <PersistentString
                value = "lat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchBusStationByPosVC.mapView(_:annotationView:calloutAccessoryControlTapped:):SearchBusStationByPosVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedStationNo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
