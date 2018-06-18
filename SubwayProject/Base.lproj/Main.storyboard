@@ -104,7 +104,13 @@
                             <outletCollection property="gestureRecognizers" destination="bbj-6Q-upF" appends="YES" id="hHS-rA-dm6"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="dh1-Qu-6k3"/>
+                    <navigationItem key="navigationItem" title="Search" id="dh1-Qu-6k3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="OoZ-D1-yhG">
+                            <connections>
+                                <segue destination="4pV-t3-6m0" kind="show" id="Md2-TF-QJY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="BehindView" destination="o7Z-G1-m34" id="vOv-fs-u0y"/>
                         <outlet property="BusName" destination="cHI-gS-uaH" id="ZEr-jd-EYi"/>
@@ -194,6 +200,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idc-iz-C2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="612" y="-377"/>
+        </scene>
+        <!--Information-->
+        <scene sceneID="FnA-8V-uoY">
+            <objects>
+                <viewController id="4pV-t3-6m0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MgI-7b-SRn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Contact : lyricia01@gmail.com" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-KA-781">
+                                <rect key="frame" x="20" y="621" width="240" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dv-QT-OKE">
+                                <rect key="frame" x="20" y="168" width="355" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">  본 어플리케이션은 OpenAPI를 이용하여 제작되었습니다.
+
+ 사용된 API는 다음과 같습니다.
+
+정류소정보조회서비스 노선정보조회서비스 버스위치정보조회서비스 버스도착정보조회서비스  Topis 서울시 지하철 실시간 도착정보  모든 API의 저작권은 서울특별시에 있습니다. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xnX-Ir-Q20"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information" id="s5K-pH-5RJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXS-HZ-FFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388.40579710144931" y="-1520.3804347826087"/>
         </scene>
         <!--Search-->
         <scene sceneID="ZN5-OH-fvO">
